@@ -1,5 +1,11 @@
 package ch02.ex06;
 
+/** A <code>Point</code> object represents a point in space with an x and y coordinate.
+*
+* @author angus
+* @version 1.0
+*/
+
 public class Point {
 	private int x;
 	private int y;
