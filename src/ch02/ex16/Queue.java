@@ -2,7 +2,7 @@ package ch02.ex16;
 
 public class Queue {
 	
-	private class Node {
+	private static class Node {
 		Node next = null;
 		String data;
 		
@@ -15,7 +15,11 @@ public class Queue {
 	private Node tail = null;
 	private int length = 0;
 	
-	public Node add(String data) {
+	public int length() {
+		return length;
+	}
+	
+	public String add(String data) {
 		Node node = new Node(data);
 		if (head == null) {
 			head = node;
@@ -24,10 +28,10 @@ public class Queue {
 		}
 		tail = node;
 		length += 1;
-		return node;
+		return node.data;
 	}
 	
-	public Node remove() {
+	public String remove() {
 		if (head == null) return null;
 		
 		Node nodeToRemove = head;
@@ -37,6 +41,6 @@ public class Queue {
 			head = head.next;
 		}
 		length -= 1;
-		return nodeToRemove;
+		return nodeToRemove.data;
 	}
 }
