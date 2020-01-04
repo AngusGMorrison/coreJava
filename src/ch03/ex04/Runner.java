@@ -8,5 +8,12 @@ public class Runner {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		IntSequence constantSequence = IntSequence.constant(1);
+		try {
+			System.out.println(constantSequence.next());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
