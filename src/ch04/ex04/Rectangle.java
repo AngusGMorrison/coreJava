@@ -17,8 +17,18 @@ public class Rectangle extends Shape {
 	@Override
 	public Point getCenter() {
 		double x = origin.getX() + width / 2;
-		double y = origin.getY() + height / 2;
+		double y = origin.getY() - height / 2;
 		return new Point(x, y);
 	}
-
+	
+	@Override
+	public Rectangle clone() {
+		try {
+			Point point = origin.clone();
+			Rectangle cloned = new Rectangle(point, width, height);
+			return cloned;
+		} catch (CloneNotSupportedException e) {
+			return null;
+		}
+	}
 }

@@ -12,4 +12,7 @@ public abstract class Shape {
 	}
 	
 	public abstract Point getCenter();
+	
+	@Override
+	public abstract Shape clone();
 }

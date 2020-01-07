@@ -1,12 +1,17 @@
 package ch04.ex04;
 
-public class Point {
+public class Point implements Cloneable {
 	private double x;
 	private double y;
 	
 	public Point(double x, double y) {
 		this.x = x;
 		this.y = y;
+	}
+	
+	public Point() {
+		this.x = 0;
+		this.y = 0;
 	}
 	
 	public double getX() {
@@ -28,6 +33,10 @@ public class Point {
 	
 	public void setY(double y) {
 		this.y = y;
+	}
+	
+	public Point clone() throws CloneNotSupportedException {
+		return (Point) super.clone();
 	}
 	
 }

@@ -29,7 +29,7 @@ public class LabeledPoint extends Point {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(label);
+		return Objects.hash(super.hashCode(), label);
 	}
 	
 	public static void illegalAccess(LabeledPoint point1, XYZPoint point2) {

@@ -16,5 +16,15 @@ public class Circle extends Shape {
 	public double getRadius() {
 		return radius;
 	}
-
+	
+	@Override
+	public Circle clone() {
+		try {
+			Point point = origin.clone();
+			Circle cloned = new Circle(point, radius);
+			return cloned;
+		} catch (CloneNotSupportedException e) {
+			return null; //Can't happen
+		}
+	}
 }
