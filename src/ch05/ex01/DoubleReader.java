@@ -8,10 +8,20 @@ import java.util.Scanner;
 public class DoubleReader {
 	public static void main(String[] args) {
 		try {
-			readValues("src/ch05/ex01/resources/doubles.txt");
-		} catch (FileNotFoundException | IllegalArgumentException e) {
+			sumOfValues("src/ch05/ex01/resources/doubles.txt");
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}	
+	}
+	
+	public static double sumOfValues(String filename)
+		throws FileNotFoundException, IllegalArgumentException {
+			ArrayList<Double> doubles = readValues(filename);
+			double sum = 0;
+			for (double d : doubles) {
+				sum += d;
+			}
+			return sum;
 	}
 	
 	public static ArrayList<Double> readValues(String filename)
