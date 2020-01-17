@@ -1,10 +1,7 @@
 package ch06.ex05;
 
-import java.util.Collections;
-
 public class VarArgsSwapper {
 	public static void main(String[] args) {
-//		double[] doubles = { 1.5, 2.0, 3.0 };
 		Double[] result = VarArgsSwapper.<Double>swap(0, 1, 1.5, 2.0, 3.0);
 	}
 	
