@@ -15,7 +15,7 @@ public class Table<K, V> {
 		}
 	}
 	
-	private ArrayList<Entry> data;
+	private ArrayList<Entry> data = new ArrayList<>();
 	
 	public V get(K key) {
 		Entry entry = find(key);
