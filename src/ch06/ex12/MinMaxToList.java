@@ -1,5 +1,6 @@
 package ch06.ex12;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -27,5 +28,10 @@ public class MinMaxToList {
 			}
 		}
 		return max;
+	}
+	
+	public static <T> void maxMin(List<T> elements, Comparator<? super T> comp, List<? super T> result) {
+		minMax(elements, comp, result);
+		Collections.swap(result, 0, 1);
 	}
 }
