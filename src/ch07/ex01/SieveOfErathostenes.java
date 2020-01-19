@@ -1,4 +1,4 @@
-package ch06.ex15;
+package ch07.ex01;
 
 import java.util.HashSet;
 import java.util.Set;
