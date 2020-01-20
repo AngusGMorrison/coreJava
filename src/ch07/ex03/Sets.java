@@ -16,7 +16,6 @@ public class Sets {
 		assert(Objects.equals(intersection, Set.of(4, 5)));
 		
 		Set<Integer> difference = difference(set1, set2);
-		System.out.println(difference.toString());
 		assert(Objects.equals(difference, Set.of(1, 2, 3, 6, 7, 8)));	
 	}
 	
