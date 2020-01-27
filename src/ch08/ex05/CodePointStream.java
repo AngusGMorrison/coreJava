@@ -35,10 +35,12 @@ public class CodePointStream {
 	}
 	
 	public static boolean isJavaIdentifier(String s) {
-		if (s.substring(0, 1).codePoints().noneMatch(c -> Character.isJavaIdentifierStart(c))) {
+		if (!Character.isJavaIdentifierStart(s.charAt(0))) {
 			return false;
 		}
-		return s.substring(1).codePoints().allMatch(c -> Character.isJavaIdentifierPart(c));
+		return s.substring(1)
+				.codePoints()
+				.allMatch(c -> Character.isJavaIdentifierPart(c));
 	}
 
 }
