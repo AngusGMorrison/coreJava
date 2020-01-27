@@ -14,6 +14,12 @@ public class CodePointStream {
 		
 		System.out.println(substrings.toString());
 		
+		System.out.println(isWord("1234"));
+		System.out.println(isWord("hello"));
+		
+		System.out.println(isJavaIdentifier("1greatName"));
+		System.out.println(isJavaIdentifier("greatName1"));
+		
 	}
 	
 	public static IntStream streamOffsets(String s) {
@@ -22,6 +28,17 @@ public class CodePointStream {
 				0,
 				prev -> prev < codePointCount,
 				prev -> s.offsetByCodePoints(prev, 1));
+	}
+	
+	public static boolean isWord(String s) {
+		return s.codePoints().allMatch(c -> Character.isAlphabetic(c));
+	}
+	
+	public static boolean isJavaIdentifier(String s) {
+		if (s.substring(0, 1).codePoints().noneMatch(c -> Character.isJavaIdentifierStart(c))) {
+			return false;
+		}
+		return s.substring(1).codePoints().allMatch(c -> Character.isJavaIdentifierPart(c));
 	}
 
 }
